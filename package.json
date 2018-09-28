@@ -1,0 +1,23 @@
+{
+  "name": "nodeapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wangtaofy/nodeApi.git"
+  },
+  "author": "wangtao",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wangtaofy/nodeApi/issues"
+  },
+  "homepage": "https://github.com/wangtaofy/nodeApi#readme",
+  "dependencies": {
+    "env2": "^2.2.2",
+    "hapi": "^16.6.3"
+  }
+}
