@@ -18,6 +18,16 @@
   "homepage": "https://github.com/wangtaofy/nodeApi#readme",
   "dependencies": {
     "env2": "^2.2.2",
-    "hapi": "^16.6.3"
+    "hapi": "^16.6.3",
+    "hapi-swagger": "^7.10.0",
+    "inert": "^4.2.1",
+    "joi": "^13.6.0",
+    "mysql2": "^1.6.1",
+    "packagecd": "^1.0.1",
+    "sequelize": "^4.39.0",
+    "vision": "^4.1.1"
+  },
+  "devDependencies": {
+    "sequelize-cli": "^4.1.1"
   }
 }
