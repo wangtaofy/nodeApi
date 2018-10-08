@@ -2,6 +2,10 @@
 const GROUP_NAME = 'orders';
 // 引入joi校验数据结构
 const Joi = require('joi');
+// 通用校验配置
+const {
+  jwtHeaderDefine
+} = require('../utils/router-helper');
 
 module.exports = [
   // 创建订单
@@ -13,7 +17,10 @@ module.exports = [
     },
     config: {
       tags: ['api', GROUP_NAME],
-      description: '创建订单'
+      description: '创建订单',
+      validate: {
+        ...jwtHeaderDefine
+      }
     }
   },
   // 订单支付
@@ -27,6 +34,7 @@ module.exports = [
       tags: ['api', GROUP_NAME],
       description: '支付某条订单',
       validate: {
+        ...jwtHeaderDefine,
         params: {
           orderId: Joi.string().required()
         }

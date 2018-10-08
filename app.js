@@ -6,15 +6,21 @@ const { env } = process;
 
 // 引用自定义的hapi-swagger插件配置
 const pluginHapiSwagger = require('./plugins/hapi-swagger');
+// 引用分页插件
+const pluginHapiPagination = require('./plugins/hapi-pagination');
+// 引入hapi-auth-jwt2插件配置
+const hapiAuthJWT2 = require('hapi-auth-jwt2');
+const pluginHapiAuthJwt2 = require('./plugins/hapi-auth-jwt2');
 
 // 接口文件
 const routesHelloHapi = require('./routes/hello-hapi');
 const routesShops = require('./routes/shops');
 const routesOrders = require('./routes/orders');
+const routesUsers = require('./routes/users');
 // console.log('env', process.env.PORT);
 
-const server = new Hapi.Server();
 // 配置服务器启动host与端口
+const server = new Hapi.Server();
 server.connection({
   port: env.PORT,
   host: env.HOST
@@ -22,14 +28,17 @@ server.connection({
 
 const init = async () => {
   await server.register([
-    // 为系统使用hapi-swagger
-    ...pluginHapiSwagger
+    ...pluginHapiSwagger,
+    pluginHapiPagination,
+    hapiAuthJWT2
   ]);
+  pluginHapiAuthJwt2(server);
   server.route([
     // 创建一个简单的hello hapi接口
     ...routesHelloHapi,
     ...routesShops,
-    ...routesOrders
+    ...routesOrders,
+    ...routesUsers
   ]);
 
   // 启动服务
