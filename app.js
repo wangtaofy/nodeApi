@@ -17,6 +17,7 @@ const routesHelloHapi = require('./routes/hello-hapi');
 const routesShops = require('./routes/shops');
 const routesOrders = require('./routes/orders');
 const routesUsers = require('./routes/users');
+const routesWxUploads = require('./routes/wx-uploads');
 // console.log('env', process.env.PORT);
 
 // 配置服务器启动host与端口
@@ -38,7 +39,8 @@ const init = async () => {
     ...routesHelloHapi,
     ...routesShops,
     ...routesOrders,
-    ...routesUsers
+    ...routesUsers,
+    ...routesWxUploads
   ]);
 
   // 启动服务
