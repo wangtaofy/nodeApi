@@ -18,6 +18,7 @@
   "homepage": "https://github.com/wangtaofy/nodeApi#readme",
   "dependencies": {
     "axios": "^0.18.0",
+    "cryptiles": "^4.1.2",
     "crypto": "^1.0.1",
     "env2": "^2.2.2",
     "hapi": "^16.6.3",

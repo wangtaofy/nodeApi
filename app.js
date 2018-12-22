@@ -18,6 +18,7 @@ const routesShops = require('./routes/shops');
 const routesOrders = require('./routes/orders');
 const routesUsers = require('./routes/users');
 const routesWxUploads = require('./routes/wx-uploads');
+const routerRecipes = require('./routes/recipes');
 // console.log('env', process.env.PORT);
 
 // 配置服务器启动host与端口
@@ -28,19 +29,21 @@ server.connection({
 });
 
 const init = async () => {
+  // 插件
   await server.register([
     ...pluginHapiSwagger,
     pluginHapiPagination,
     hapiAuthJWT2
   ]);
   pluginHapiAuthJwt2(server);
+  // 接口
   server.route([
-    // 创建一个简单的hello hapi接口
     ...routesHelloHapi,
     ...routesShops,
     ...routesOrders,
     ...routesUsers,
-    ...routesWxUploads
+    ...routesWxUploads,
+    ...routerRecipes
   ]);
 
   // 启动服务

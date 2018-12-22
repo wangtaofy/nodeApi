@@ -17,10 +17,11 @@ module.exports = [
       grouping: 'tags',
       tags: [
         { name: 'tests', description: '测试相关' },
+        { name: 'recipes', description: '食谱相关' },
         { name: 'shops', description: '店铺、商品相关' },
         { name: 'orders', description: '订单相关' },
         { name: 'users', description: '用户相关' },
-        { name: 'wxUploads', description: '微信上传相关' }
+        { name: 'wxUploads', description: '微信上传相关' },
       ]
     }
   }

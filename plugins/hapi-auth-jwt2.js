@@ -3,7 +3,7 @@ const config = require('../config');
 const validate = (decoded, request, callback) => {
   let error;
   /*
-    接口 POST /users/createJWT 中的 jwt 签发规则
+    接口 POST /users/cre teJWT 中的 jwt 签发规则
 
     const payload = {
       userId: jwtInfo.userId,

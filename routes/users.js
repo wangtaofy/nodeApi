@@ -20,6 +20,7 @@ module.exports = [
     method: 'POST',
     path: `/${GROUP_NAME}/wxLogin`,
     handler: async (request, reply) => {
+      /***************************************************************************************************** *
       // 获取oppenid、session_key
       const appid = config.wxAppid;
       const appSecret = config.wxAppsecret;
@@ -59,6 +60,7 @@ module.exports = [
           open_id: openid
         }
       });
+      /***************************************************************************************************** */
 
       // 签发jwt
       const generateJWT = (jwtinfo) => {
@@ -71,7 +73,7 @@ module.exports = [
       };
 
       let result = {
-        token: generateJWT({ userId: user[0].id })
+        token: generateJWT({ userId: 123 })
       };
 
       reply(result);
@@ -80,13 +82,13 @@ module.exports = [
       tags: ['api', GROUP_NAME],
       description: '用户登录, 签发JWT',
       auth: false,
-      validate: {
-        payload: {
-          code: Joi.string().required().description('微信用户登录的临时code'),
-          encryptedData: Joi.string().required().description('微信用户信息encryptedData'),
-          iv: Joi.string().required().description('微信用户信息iv')
-        }
-      }
+      // validate: {
+      //   payload: {
+      //     code: Joi.string().required().description('微信用户登录的临时code'),
+      //     encryptedData: Joi.string().required().description('微信用户信息encryptedData'),
+      //     iv: Joi.string().required().description('微信用户信息iv')
+      //   }
+      // }
     }
   }
 ]

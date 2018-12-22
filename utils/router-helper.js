@@ -13,7 +13,7 @@ const paginationDefine = {
 // jwt headers 校验
 const jwtHeaderDefine = {
   headers: Joi.object({
-    authorization: Joi.string().required()
+    authorization: Joi.string().required().description('jwt')
   }).unknown()
 };
 

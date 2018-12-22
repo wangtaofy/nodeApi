@@ -12,7 +12,7 @@ module.exports = [
     },
     config: {
       tags: ['api', 'tests'],
-      description: '测试hello-hapi',
+      description: '测试jwt',
       validate: {
         ...jwtHeaderDefine
       }
